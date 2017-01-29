@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence version="2.0"
+             xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+    <persistence-unit name="prgrPU" transaction-type="JTA">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <!-- JBoss 7.x -->
+        <jta-data-source>java:jboss/datasources/mysqlDS</jta-data-source>
+        <!-- JBoss 6.x -->
+        <!-- <jta-data-source>java:jdbc/mysqlDS</jta-data-source> -->
+        <properties>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+            <property name="hibernate.show_sql" value="false" />
+            <property name="hibernate.format_sql" value="true" />
+            <property name="hibernate.generate_statistics" value="false" />
+            <property name="hibernate.use_sql_comments" value="false" />
+            <property name="hibernate.id.new_generator_mappings" value="true" />
+            <property name="hibernate.hbm2ddl.auto" value="update" /> <!-- update, create -->
+            <!-- Dla mysql  -->
+            <!--  <property name="hibernate.connection.characterEncoding" value = 'utf8'/> -->
+            <!--  <property name="hibernate.connection.characterEncoding" value = 'UTF-8'/>-->
+        </properties>
+    </persistence-unit>
+</persistence>
+
+        <!--<persistence xmlns="http://java.sun.com/xml/ns/persistence"-->
+        <!--xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+        <!--xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"-->
+        <!--version="2.0">-->
+
+        <!--<persistence-unit name="prgrPU" transaction-type="RESOURCE_LOCAL">-->
+        <!--<description>-->
+        <!--Persistence unit for the JPA tutorial of the Hibernate Getting Started Guide-->
+        <!--</description>-->
+        <!--&lt;!&ndash;<class>pl.grpr.jpa.UzytkownikEntity</class>&ndash;&gt;-->
+
+        <!--<properties>-->
+        <!--<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />-->
+        <!--<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/mydb" />-->
+        <!--<property name="javax.persistence.jdbc.user" value="tajnyLogin" />-->
+        <!--<property name="javax.persistence.jdbc.password" value="tajneHaslo" />-->
+
+        <!--<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />-->
+        <!--<property name="hibernate.show_sql" value="true" />-->
+        <!--<property name="hibernate.hbm2ddl.auto" value="validate" />-->
+        <!--</properties>-->
+
+        <!--</persistence-unit>-->
+
+        <!--</persistence>-->
